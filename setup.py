@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.1",
     author="FabrizioMontanari",
     author_email="",
-    description="A package to manipulate, convert validate AIC codes",
+    description="A package to manipulate, convert and validate AIC codes",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/FabrizioMontanari/pyAIC",
