@@ -1,6 +1,6 @@
 # pyAIC
 
-This package define a series of function to manipulate, convert and (syntactically) validate AIC codes as described in the italian "Gazzetta Ufficiale della Repubblica Italiana" Serie Generale n.165 del 18-07-2014, attachment A.
+This package define a series of function to manipulate, convert and (syntactically) validate AIC codes as described in the italian "Gazzetta Ufficiale della Repubblica Italiana" [Serie Generale n.165 del 18-07-2014](https://www.gazzettaufficiale.it/atto/serie_generale/caricaDettaglioAtto/originario?atto.dataPubblicazioneGazzetta=2014-07-18&atto.codiceRedazionale=14A05668&elenco30giorni=true), [attachment A](https://www.gazzettaufficiale.it/do/atto/serie_generale/caricaPdf?cdimg=14A0566800100010110001&dgu=2014-07-18&art.dataPubblicazioneGazzetta=2014-07-18&art.codiceRedazionale=14A05668&art.num=1&art.tiposerie=SG).
 The document describes two valid representation of an AIC code.
 
 ## Functions
@@ -12,3 +12,4 @@ The functions to convert between base32 and base10 representation are **from10to
 
 
 The last char of a base10 code is a checksum, to check it use **check_AIC_base10_checksum**.
+
