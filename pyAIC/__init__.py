@@ -84,13 +84,15 @@ def check_AIC_base10_checksum(AIC):
     return AIC[-1] == str((p + d)%10)
 
 
-def is_base10_AIC(code):
+def is_base10_AIC(code, strict=True):
     """Check if a string is a valid base10 representation of an AIC code.
 
     Parameters
     ----------
     code : str
         The string containing the code to check
+    strict : bool
+        if true a check on the first digit is performed
 
     Returns
     -------
@@ -105,18 +107,20 @@ def is_base10_AIC(code):
     for c in code:
         if c.lower() not in AIC_TABLE[:10]:
             return False
-    if code[0] != "0":
+    if strict and code[0] != "0":
         return False
     return check_AIC_base10_checksum(code)
 
 
-def is_base32_AIC(code):
+def is_base32_AIC(code, strict=True):
     """Check if a string is a valid base32 representation of an AIC code.
 
     Parameters
     ----------
     code : str
         The string containing the code to check
+    strict : bool
+        if true a check on the first digit of the converted value is performed
 
     Returns
     -------
@@ -135,4 +139,4 @@ def is_base32_AIC(code):
     converted = from32to10(code)
     # the base 32 is valid if its base 10 is valid
     # using base 10 we can perform an extra check on the checksum digit
-    return is_base10_AIC(converted)
+    return is_base10_AIC(converted, strict=strict)
