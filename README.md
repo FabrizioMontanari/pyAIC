@@ -5,11 +5,11 @@ The document describes two valid representation of an AIC code.
 
 ## Functions
 
-The functions to validate a code are **is_base32_AIC** and **is_base32_AIC**.
+The functions to validate a code are **is_base32_AIC** and **is_base32_AIC**. Using strict=True will validate only real AIC codes (they must start with "0"), while strict=False will validate PARAF codes.
 
 
 The functions to convert between base32 and base10 representation are **from10to32** and **from32to10**.
 
 
-The last char of a base10 code is a checksum, to check it use **check_AIC_base10_checksum**.
+The last char of a base10 code is a checksum, to check it use **check_AIC_base10_checksum**, to compute it use **calc_AIC_base10_checksum**.
 

@@ -60,6 +60,27 @@ def from10to32(string):
     return res.zfill(6)
 
 
+def calc_AIC_base10_checksum(code):
+    """Check if a string checksum char in the base10 representation is correct.
+    Parameters
+    ----------
+    AIC : str
+        The string containing the code used to generate the checksum
+
+    Returns
+    -------
+    str        The checksum value.
+    """
+    xn = [2*int(code[i]) for i in (1,3,5,7)]
+    p = 0
+    for x in xn:
+        p = p + (x // 10) + (x % 10)
+    d = 0
+    for i in (0,2,4,6):
+        d = d + int(AIC[i])
+    return str((p + d)%10)
+
+
 def check_AIC_base10_checksum(AIC):
     """Check if a string checksum char in the base10 representation is correct.
 
@@ -73,15 +94,7 @@ def check_AIC_base10_checksum(AIC):
     bool
         True if the checksum is correct.
     """
-
-    xn = [2*int(AIC[i]) for i in (1,3,5,7)]
-    p = 0
-    for x in xn:
-        p = p + (x // 10) + (x % 10)
-    d = 0
-    for i in (0,2,4,6):
-        d = d + int(AIC[i])
-    return AIC[-1] == str((p + d)%10)
+    return AIC[-1] == calc_AIC_base10_checksum(AIC)
 
 
 def is_base10_AIC(code, strict=True):

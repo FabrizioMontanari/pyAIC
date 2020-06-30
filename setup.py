@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyAIC", # Replace with your own username
-    version="0.0.4",
+    version="0.0.5",
     author="FabrizioMontanari",
     author_email="",
     description="A package to manipulate, convert and validate AIC codes",
